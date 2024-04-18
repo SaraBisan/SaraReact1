@@ -9,3 +9,7 @@ export function wait(timeout: number) {
 export function fullName(user: User) {
     return user.name.first + " " + user.name.last
 }
+
+export function prettyDate(d: string | Date) {
+    return new Date(d).toLocaleDateString('he-il')
+}

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import AuthGuard from "@/guards/AuthGuard"
 import { useNonNullUser } from "@/store"
 import { fullName } from "@/utils"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom"
 
 
 function Profile() {
@@ -19,17 +19,23 @@ function Profile() {
                 <h1>{fullName(user)}</h1>
             </div>
             <div className="flex flex-row items-center gap-4">
-                <Button onClick={() => nav("/profile-update")}>
+                <Button onClick={() => nav("/profile/profile-update")}>
                     Update profile
                 </Button>
 
-                <Button onClick={() => nav("/profile-reviews")}>
+                <Button onClick={() => nav("/profile/profile-my-reviews")}>
                     My Reviews
+                </Button>
+
+                <Button onClick={() => nav("/profile/profile-liked-reviews")}>
+                    Liked Reviews
                 </Button>
             </div>
 
         </div>
-
+        <div className="p-[1rem] w-full">
+            <Outlet />
+        </div>
 
     </div>
 }

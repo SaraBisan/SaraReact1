@@ -12,6 +12,7 @@ interface UserImage {
 }
 
 export interface User {
+    _id?: string
     name: Name
     image: UserImage
     address: Address

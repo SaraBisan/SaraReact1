@@ -4,11 +4,15 @@ import { actions } from "@/store/user.slice";
 import { wait } from "@/utils";
 import { useEffect } from "react";
 import { useDispatch, } from "react-redux";
+import { useLocation, useNavigate } from "react-router";
 import ClipLoader from "react-spinners/ClipLoader";
 import { toast } from "react-toastify";
 
 function Logout() {
     const dispatch = useDispatch<AppDispatch>()
+
+    const nav = useNavigate()
+    const location = useLocation()
     useEffect(() => {
         const logOutDelayed = async () => {
             await wait(2000)

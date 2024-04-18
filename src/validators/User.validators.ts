@@ -3,6 +3,7 @@ import phoneRegex from '@/assets/phoneRegex'
 import z from 'zod'
 
 
+
 const UserRegistrationForm = z.object({
     name: z.object({
         first: z.string(),

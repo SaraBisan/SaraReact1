@@ -1,3 +1,4 @@
+import CreateBusinessAccountDialog from "@/components/reviews/CreateBusinessAccountDialog";
 import { RootState } from "@/store";
 import { IUserSlice } from "@/store/user.slice";
 import { User } from "@/types/User.types";
@@ -8,8 +9,7 @@ import { Link, Navigate } from "react-router-dom";
 
 
 
-export default function AuthGuard<T extends object>(
-    Component: FunctionComponent<T>,
+export default function BusinessGuard<T extends object>(Component: FunctionComponent<T>,
     showLoading: boolean = true,
     redirect: boolean = false) {
 
@@ -30,12 +30,15 @@ export default function AuthGuard<T extends object>(
                 </span>
             </div>
         }
-        if (!user) {
+        if (!user || !user.isBusiness) {
             if (redirect) {
                 return <Navigate to="/auth/login" />
             }
-            return <div>
-                You must be authenticated to view this page. <Link to="/auth/login" className="text-blue-500">Login here</Link>
+            return <div className="flex flex-col items-center">
+                <span>
+                    Only Business accounts can view this page.
+                </span>
+                <CreateBusinessAccountDialog />
             </div>
         }
 

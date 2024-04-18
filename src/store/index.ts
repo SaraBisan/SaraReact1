@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { userSlice } from "./user.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { User } from "@/types/User.types";
+import { reviewsSlice } from "./cards.slice";
 
 
 export const store = configureStore({
     reducer: {
         user: userSlice.reducer,
+        reviews: reviewsSlice.reducer
     },
 })
 

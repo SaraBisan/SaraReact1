@@ -37,8 +37,8 @@ function ProfileEdit() {
     }
 
     return <>
-        <div className="w-[100%] flex items-start p-[1rem]">
-            <Link to="/profile" className="text-[14px]">Back to profile</Link>
+        <div className="w-[100%] flex items-start">
+
         </div>
         <Form {...form} >
             <h1 className="text-[24px] font-bold p-2">Update Profile</h1>

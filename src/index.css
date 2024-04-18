@@ -35,7 +35,31 @@
     --radius: 0.5rem;
   }
 
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ad3f1d;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7b2a11;
+  }
+
   @layer utilities {
+
+
+
 
     /* Chrome, Safari and Opera */
     .no-scrollbar::-webkit-scrollbar {
@@ -74,6 +98,18 @@
     max-width: 100%;
     border-radius: 50%;
   }
+
+  .img-2 {
+    max-width: 100%;
+    border-radius: 10%;
+  }
+
+  .img-icon {
+    max-width: 100%;
+    height: 20px;
+    cursor: pointer;
+  }
+
 
   .dark {
     --background: 222.2 84% 4.9%;
